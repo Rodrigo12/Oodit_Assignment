@@ -1,0 +1,29 @@
+﻿@model Oodit_Assignment.Models.FormModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<link rel="stylesheet" href="~/css/home.css" />
+<script type="text/javascript" src="~/js/home.js"></script>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to the Magic Three Count Array!</h1>
+    <p>Provide any array of numbers and we will return the magic array, in descending order, with all the numbers that are repeated at least three times.</p>
+
+    <form method="post" asp-controller="Home">
+
+        <div class="block">
+            <p>Which array should be processed</p>
+            <div style="display: block;">
+                <input asp-for="InputString" placeholder="Add the array here (ex: [5, 5, 5]">
+                <label class="label">
+                    @if (TempData["Message"] != null)
+                    {
+                        @Html.Raw(TempData["Message"].ToString())
+                    }
+                </label>
+            </div>
+        </div>
+
+        <button asp-action="ProcessInput" type="submit">Let's Go</button>
+    </form>
+</div>

@@ -1,0 +1,12 @@
+﻿/* Styles for the home page elements */
+
+.block {
+    display: block;
+    margin-top: 50px;
+}
+
+.label {
+    display: block;
+    font-style: italic;
+    font-size: small;
+}
